@@ -129,7 +129,7 @@ bool Game_Intro_::_EndIntro()
 	std::cin >> _PlayerChoice;
 	std::cin.ignore();
 
-	if (_PlayerChoice == "Y" or "y" or "YES" or "Yes" or "yes")
+	if (_PlayerChoice == "Y" or _PlayerChoice == "y" or _PlayerChoice == "YES" or _PlayerChoice == "Yes" or _PlayerChoice == "yes")
 	{
 		return true;
 	}

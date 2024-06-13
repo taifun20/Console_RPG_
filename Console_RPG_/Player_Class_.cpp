@@ -61,13 +61,13 @@ void Player_Class_::_CreateChest(int LV_Pawn_)
     switch (LV_Pawn_)
     {
     case 1:
-        _ChestItemGenerate({ 1,2 });
+        _ChestItemGenerate({ 0,3,4,4 });
         break;
     case 2:
-        _ChestItemGenerate({ 1,2 });
+        _ChestItemGenerate({ 1,5,5 });
         break;
     case 3:
-        _ChestItemGenerate({ 1,3 });
+        _ChestItemGenerate({ 2,4,4,4 });
         break;
     default:
         break;

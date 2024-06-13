@@ -16,12 +16,12 @@ class Enemy
 			_EnemyHealth(LV_EnemyHealth_), _EnemyDealDamage(LV_EnemyDealDamage_), _EnemyName(LV_EnemyName_)
 		{
 
-			std::cout << "	DEBUG | Enemy " << _EnemyName << " was created" << std::endl;
+			//std::cout << "	DEBUG | Enemy " << _EnemyName << " was created" << std::endl;
 		}
 		~Enemy()
 		{
 
-			std::cout << "	DEBUG | Enemy " << _EnemyName << " was destroyed" << std::endl;
+			//std::cout << "	DEBUG | Enemy " << _EnemyName << " was destroyed" << std::endl;
 		}
 
 		void _setEnemyHealth(int LV_Health_);
@@ -44,11 +44,11 @@ class Item
 			_ItemDamage(LV_ItemDamage),
 			_ItemCanHealPlayer(LV_ItemCanHealPlayer)
 		{
-			std::cout << "	DEBUG | Item " << _ItemName << " was created" << std::endl;
+			//std::cout << "	DEBUG | Item " << _ItemName << " was created" << std::endl;
 		}
 		~Item()
 		{
-			std::cout << "	DEBUG | Item " << _ItemName << " was destroyed" << std::endl;
+			//std::cout << "	DEBUG | Item " << _ItemName << " was destroyed" << std::endl;
 		}
 		
 		std::string getItemName()
@@ -75,10 +75,13 @@ class Player_Class_
 			bool _CanHealPlayer;
 		};
 
-		Struct_Items_ Item_List_[3] = {
+		Struct_Items_ Item_List_[6] = {
 			{"Sword", 25, false},
 			{"Axe", 30, false},
-			{"Heal Potion", 20, true}
+			{"Magic Stick", 35, false},
+			{"Shawarma", 10, true},
+			{"Heal Potion", 20, true},
+			{"Golden Apple", 40, true}
 		};
 
 		std::string strPlayerName_;
@@ -90,11 +93,11 @@ class Player_Class_
 	public:
 		Player_Class_()
 		{
-			std::cout << "	DEBUG | Player_Class spawned !" << std::endl;
+			//std::cout << "	DEBUG | Player_Class spawned !" << std::endl;
 		}
 		Player_Class_(int LV_Health_, int LV_Armor_, std::string LV_PlayerName, std::string LV_PawnName)
 		{
-			std::cout << "	DEBUG | Player_Class spawned !" << std::endl;
+			//std::cout << "	DEBUG | Player_Class spawned !" << std::endl;
 
 			std::cout << std::endl;
 
@@ -103,7 +106,7 @@ class Player_Class_
 			strPlayerName_ = LV_PlayerName;
 			strPawnName = LV_PawnName;
 
-			std::cout << "	DEBUG | Player Status !" << std::endl <<
+			std::cout << "	GAME | Player Status !" << std::endl <<
 				"	Health: " << LV_Health_ << std::endl <<
 				"	Armor: " << LV_Armor_ << std::endl <<
 				"	Player Name: " << LV_PlayerName << std::endl <<
@@ -113,7 +116,7 @@ class Player_Class_
 		}
 		~Player_Class_()
 		{
-			std::cout << "	DEBUG | Player_Class destroyed !" << std::endl;
+			//std::cout << "	DEBUG | Player_Class destroyed !" << std::endl;
 			_destroyPlayerInventory();
 		}
 
