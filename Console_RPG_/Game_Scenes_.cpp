@@ -198,13 +198,14 @@ void _Game_Battle_Enemy_(Player_Class_* LV_Player_, Game_Intro_* LV_GameIntro_, 
         if (LV_Player_->_getItemByIndex(_Player_Strategy_ - 1)->_getItemUtility())
         {
             system("CLS");
-            std::cout << "  You used the " << LV_Player_->_getItemByIndex(_Player_Strategy_ - 1)->getItemName() << std::endl;
-            std::cout << "	GAME: You have " << LV_Player_->_getPlayerHealth()
-                      << " Health and " << LV_Player_->_getPlayerArmor() << " Armor" << std::endl;
 
             // Get Player Health + Heal Potion = Player Health
             LV_Player_->_setPlayerHealth(LV_Player_->_getPlayerHealth() + LV_Player_->_getItemByIndex(_Player_Strategy_ - 1)->_getItemDamage());
         
+            std::cout << "  You used the " << LV_Player_->_getItemByIndex(_Player_Strategy_ - 1)->getItemName() << std::endl;
+            std::cout << "	GAME: You have " << LV_Player_->_getPlayerHealth()
+                << " Health and " << LV_Player_->_getPlayerArmor() << " Armor" << std::endl;
+
             LV_Player_->_removeInventoryItem(_Player_Strategy_ - 1);
 
             _Game_Battle_Enemy_(LV_Player_, LV_GameIntro_, LV_Enemy_, LV_Wav, LV_StopFlag, LV_SoundThread);
